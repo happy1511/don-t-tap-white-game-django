@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@500&display=swap");
+* {
+  font-family: "AR One Sans", sans-serif;
+}
+html,
+body {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.Flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.vw100 {
+  width: 100vw;
+}
+
+.NewGameForm {
+}
+
+.NewGameButton{
+  padding: 10px 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.NewGameButton:active {
+  padding: 8px 8px;
+}
+
+.GameBoard{
+    height: 430px;
+    width: 430px;
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
+
+.Tile{
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.GameEnded{
+  background-color: white !important;
+}
+
+.GameScore{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GameScore>h1{
+  height: 100%;
+  margin: 0 0;
+}

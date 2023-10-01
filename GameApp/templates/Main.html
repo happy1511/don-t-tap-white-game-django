@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Tap White Tile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css.css' %}">
+</head>
+<body>
+    <div class="Flex vh100 vw100">
+        <div class="NewGameForm">
+            <a href="{% url 'startGame' %}" class="NewGameButton">New Game</a>
+        </div>
+    </div>
+</body>
+</html>
