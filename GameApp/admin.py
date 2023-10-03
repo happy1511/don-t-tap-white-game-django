@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Tile
+from .models import Score
 # Register your models here.
-admin.site.register(Tile)
+admin.site.register(Score)

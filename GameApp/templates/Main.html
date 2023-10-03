@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Don't Tap White Tile</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css.css' %}">
-</head>
-<body>
-    <div class="Flex vh100 vw100">
-        <div class="NewGameForm">
-            <a href="{% url 'startGame' %}" class="NewGameButton">New Game</a>
+    <link rel="stylesheet" href="{% static 'css.css' %}" />
+  </head>
+  <body>
+    <div
+      class="Flex vh100 vw100"
+      style="flex-direction: column; justify-content: center"
+    >
+      <h1>Don't Tap White Game</h1>
+      <div
+        class="NewGameForm"
+        style="flex-direction: column; display: flex; gap: 20px"
+      >
+        <div class="Flex" style="flex-direction: column; gap: 20px">
+          {% if user.is_authenticated %}
+          <div class="Flex" style="gap: 20px">
+            <a href="{% url 'logout' %}" class="NewGameButton"
+              >Logout {{ user.username }}</a
+            >
+            <a href="{% url 'scores' %}" class="NewGameButton">
+              Previous Scores
+            </a>
+          </div>
+          {% else %}
+          <div class="Flex" style="gap: 20px">
+            <a href="{% url 'signup' %}" class="NewGameButton">SignUp</a>
+            <a href="{% url 'login' %}" class="NewGameButton">login</a>
+          </div>
         </div>
+
+        {% endif %}
+        <a
+          href="{% url 'startGame' %}"
+          class="NewGameButton"
+          style="width: 100%; box-sizing: border-box; text-align: center"
+          >New Game</a
+        >
+      </div>
     </div>
-</body>
+  </body>
 </html>

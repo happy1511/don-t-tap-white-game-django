@@ -6,6 +6,7 @@
     <title>Document</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css.css' %}" />
+    {% csrf_token %}
     <script>
       var Score = 0;
       const handleClick = (row, col) => {
@@ -19,6 +20,21 @@
           clearInterval(interval);
           document.getElementById("Board").style.opacity = "0.3";
           document.getElementById("Over").style.display = "block";
+          var csrfToken =
+            document.cookie.split("=")[
+              document.cookie.split("=").indexOf("csrftoken") + 1
+            ];
+          console.log(csrfToken);
+          console.log("{{ user.is_authenticated }}");
+          if ("{{ user.is_authenticated }}") {
+            fetch("{% url 'score' %}", {
+              method: "POST",
+              headers: {
+                "X-CSRFToken": csrfToken,
+              },
+              body: JSON.stringify({ Score: Score, username: "{{ user }}" }),
+            }).then((res) => console.log("response"));
+          }
           // document.getElementById("score").innerHTML = `Score : ${Score}`;
         }
       };
@@ -27,16 +43,25 @@
         var row = Math.floor(Math.random() * 4) + 1;
         var col = Math.floor(Math.random() * 4) + 1;
         document.getElementById(`${row}${col}`).style.backgroundColor = "black";
-      }, 1000);
+      }, 500);
     </script>
   </head>
   <body>
     <div
       class="vw100 vh100 Flex"
-      style="position: relative; flex-direction: column;justify-content: flex-start;"
+      style="
+        position: relative;
+        flex-direction: column;
+        justify-content: flex-start;
+      "
     >
       <div class="GameScore">
-        <h1 id="GameScore" style="display: flex;align-items: center;justify-content: center;">Score : 0</h1>
+        <h1
+          id="GameScore"
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          Score : 0
+        </h1>
       </div>
       <div class="GameBoard" id="Board">
         {% for row in '1234' %} {% for col in '1234' %}
@@ -74,6 +99,7 @@
         >
           <p style="margin: 0 0">Game Over</p>
           <!-- <p id="score"></p> -->
+          <a href="{% url 'home' %}" class="NewGameButton" style="margin-bottom: 5px;">Home</a>
           <a href="{% url 'startGame' %}" class="NewGameButton">New Game</a>
         </h1>
       </div>
