@@ -10,7 +10,6 @@
     <script>
       var Score = 0;
       const handleClick = (row, col) => {
-        console.log(row, col);
         let tile = document.getElementById(`${row}${col}`);
         if (tile.style.backgroundColor === "black") {
           tile.style.backgroundColor = "white";

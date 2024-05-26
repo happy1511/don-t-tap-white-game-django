@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@500&display=swap");
+* {
+  font-family: "AR One Sans", sans-serif;
+}
+html,
+body {
+  margin: 0 0;
+  padding: 0 0;
+  height: 100vh;
+  width: 100%;
+
+}
+
+.Flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.vw100 {
+  width: 100vw;
+}
+
+.NewGameForm {
+}
+
+.NewGameButton{
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 10px 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.NewGameButton:active {
+  margin: 2px 2px;
+  padding: 8px 8px;
+}
+
+.GameBoard{
+    height: 430px;
+    width: 430px;
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    border: 1px solid black;
+}
+
+.Tile{
+  box-sizing: border-box;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.GameEnded{
+  background-color: white !important;
+}
+
+.GameScore{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GameScore>h1{
+  height: 100%;
+  margin: 0 0;
+}
+
+.SignupOuter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.Form{
+  width: 20%;
+  height: 50%;
+}
+
+.SignUpForm{
+  width: 100%;
+}
+
+.username{
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.username>input{
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px 5px;
+  font-size: 15px;
+}
+
+.password{
+  width: 100%;
+  padding: 10px 0px;
+
+}
+
+.password>input{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 5px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.buttonSubmit{
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px 0px;
+  padding: 10px 2px;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+.table{
+  width: 50%;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+}
+
+.tr{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 5px 0;
+}
+
+.tr:hover{
+  background-color: white;
+  color: black;
+}
+
+.td1{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid white;
+}
+
+.td2{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgblack{
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.NewGameButton:hover{
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+.HighestScore{
+  font-size: larger;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  background-color: black;
+  width: 50%;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
