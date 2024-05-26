@@ -3,7 +3,7 @@
         "src": "Game/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb" , "runtime": "python3.9" },
-        "handler": "wsgi.application"  // or "app" if that's what you have in your wsgi.py
+        "handler": "wsgi.application"
     }],
     "routes": [
         {
